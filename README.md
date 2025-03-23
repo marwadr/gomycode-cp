@@ -33,6 +33,4 @@ Welcome to my Data Science Projects Repository! This repository contains a colle
 ## 🚀 **How to Use This Repository**
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-
-
+   git clone https://github.com/marwadr/gomycode-cp.git
