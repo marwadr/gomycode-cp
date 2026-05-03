@@ -27,12 +27,12 @@ def plot_correlation_map(df):
 if __name__ == "__main__":
     df = pd.read_csv("titanic-passengers.csv", delimiter=";")
 
-    print(df.info())
+    df.info()
     print(df.columns.values)
 
     # Missing data summary
     total = df.isnull().sum().sort_values(ascending=False)
-    percent = (df.isnull().sum() / df.isnull().count() * 100).round(1).sort_values(ascending=False)
+    percent = (df.isnull().sum() / len(df) * 100).round(1).sort_values(ascending=False)
     missing_data = pd.concat([total, percent], axis=1, keys=['Total', '%'])
     print(missing_data.head(5))
 
@@ -60,7 +60,7 @@ if __name__ == "__main__":
     g.map(plt.hist, 'Age', bins=20)
     plt.show()
 
-    plot_correlation_map(df)
+    plot_correlation_map(df.select_dtypes(include=[np.number]))
 
 
 
